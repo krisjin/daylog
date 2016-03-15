@@ -1,8 +1,9 @@
 ## JVM虚拟机参数
-1. -Xms1024m 初始堆大小
-2. -Xmx1024m 最大堆大小
-3. -XX:PermSize 设置永久代初始大小
-4. -XX:MaxPermSize 设置永久代最大大小
-3. -Xmn 新生代的内存空间大小，注意：此处的大小是（eden+ 2 survivor space)
-4. -XX:+PrintGCDetails 详细GC变化
-5. -XX:+PrintGCTimeStamps  了解垃圾收集发生的时间，自JVM启动以后以秒计算 
+1. -Xms1024m  初始堆大小
+2. -Xmx1024m  最大堆大小
+3. -XX:PermSize  设置永久代初始大小
+4. -XX:MaxPermSize  设置永久代最大大小
+5. -XX:SurvivorRatio：新生代中Eden区域与Survivor区域的容量比值，默认值为8。两个Survivor区与一个Eden区的比值为2:8,一个Survivor区占整个年轻代的1/10。
+6. -Xmn 新生代的内存空间大小，注意：此处的大小是（eden+ 2 survivor space)
+7. -XX:+PrintGCDetails 详细GC变化
+8. -XX:+PrintGCTimeStamps  了解垃圾收集发生的时间，自JVM启动以后以秒计算 
