@@ -5,5 +5,6 @@
 4. -XX:MaxPermSize  设置永久代最大大小
 5. -XX:SurvivorRatio：新生代中Eden区域与Survivor区域的容量比值，默认值为8。两个Survivor区与一个Eden区的比值为2:8,一个Survivor区占整个年轻代的1/10。
 6. -Xmn 新生代的内存空间大小，注意：此处的大小是（eden+ 2 survivor space)
-7. -XX:+PrintGCDetails 详细GC变化
-8. -XX:+PrintGCTimeStamps  了解垃圾收集发生的时间，自JVM启动以后以秒计算 
+7. -Xss 栈内存大小
+8. -XX:+PrintGCDetails 详细GC变化
+9. -XX:+PrintGCTimeStamps  了解垃圾收集发生的时间，自JVM启动以后以秒计算 
