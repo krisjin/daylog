@@ -16,3 +16,5 @@
 ### GC收集设置
 1. -XX:+PrintGCDetails 详细GC变化
 2. -XX:+PrintGCTimeStamps  了解垃圾收集发生的时间，自JVM启动以后以秒计算 
+3. -XX:+UseConcMarkSweepGC  CMS垃圾收集器
+
