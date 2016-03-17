@@ -24,3 +24,29 @@
 
 -XX:NewRatio=1 
 
+-XX:+UseParallelGC
+
+-XX:ParallelGCThreads=8
+
+-XX:+UseAdaptiveSizePolicy
+
+-Xloggc:$FLUME_PID_DIR/gc.log
+
+
+-XX:+PrintGC 
+
+-XX:+PrintGCDetails
+
+-XX:+PrintGCTimeStamps
+
+-XX:+PrintGCApplicationStoppedTime
+
+-XX:+PrintGCApplicationConcurrentTime
+
+-XX:+HeapDumpOnOutOfMemoryError
+
+-XX:HeapDumpPath=$FLUME_PID_DIR 
+
+-XX:ErrorFile=$FLUME_PID_DIR/java_error_%p.log
+
+
