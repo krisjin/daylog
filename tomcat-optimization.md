@@ -25,9 +25,9 @@ connectionTimeout：网络连接超时，单位：毫秒。设置为0表示永�
 
 
 ### 增加Tomcat使用内存：
-vi catalina.sh
-修改TOMCAT_HOME/bin/catalina.sh
-在"echo "Using CATALINA_BASE:   $CATALINA_BASE""上面加入以下行：
-JAVA_OPTS='-Xms1024m -Xmx1024m -XX:PermSize=256M -XX:MaxNewSize=256m -XX:MaxPermSize=256m '
-可以根据应用的不同，调整JVM的参数设置，此话题另有专题介绍。
-另建议：将相同的第三方jar文件移置到tomcat/shared/lib目录下，这样可以达到减少jar 文档重复占用内存的目的。
+vi catalina.sh   
+修改TOMCAT_HOME/bin/catalina.sh   
+在"echo "Using CATALINA_BASE:   $CATALINA_BASE""上面加入以下行：    
+JAVA_OPTS='-Xms1024m -Xmx1024m -XX:PermSize=256M -XX:MaxNewSize=256m -XX:MaxPermSize=256m '   
+可以根据应用的不同，调整JVM的参数设置，此话题另有专题介绍。   
+另建议：将相同的第三方jar文件移置到tomcat/shared/lib目录下，这样可以达到减少jar 文档重复占用内存的目的。   
