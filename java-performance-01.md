@@ -58,7 +58,7 @@ for(int i=0,len=list.size();i<="">
 A a = new A(); if(i==1){list.add(a);} 应该改为
 if(i==1){ A a = new A(); list.add(a);} 
 
-###　15. 尽量在finally块中释放资源
+### 15. 尽量在finally块中释放资源
 程序中使用到的资源应当被释放，以避免资源泄漏。这最好在finally块中去做。不管程序执行的结果如何，finally块总是会执行的，以确保资源的正确关闭。
 
 ### 16. 尽量使用移位来代替'a/b'的操作
