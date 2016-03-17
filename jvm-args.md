@@ -18,3 +18,9 @@
 2. -XX:+PrintGCTimeStamps  了解垃圾收集发生的时间，自JVM启动以后以秒计算 
 3. -XX:+UseConcMarkSweepGC  CMS垃圾收集器
 
+### 内存溢出错误时输出堆栈文件，内存映像文件
+1. -XX:+HeapDumpOnOutOfMemoryError
+
+
+-XX:NewRatio=1 
+
