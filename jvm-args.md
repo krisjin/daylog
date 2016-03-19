@@ -13,6 +13,12 @@
 ## -d64
 加载64位的HotSpot VM,而不是默认的32位的HotSpot。64位的HotSpot可以设置更大的堆内存。-Xms和-Xmx小于32G时，该选项要与-XX:+UseComressedOops联合使用。Java6 Update23之后的HotSpot默认开启-XX:UseCompressedOops。
 
+## -XX:UseCompressedOops
+**开启压缩指针特性。** oops(Ordinary Object Pointer)是指普通对象指针，HotSpot VM内部以它来引用对象。   
+Java引用的长度从32位增长到64位，这给64位JVM带来了性能的损失。长度的增加使得缓存行容纳的oops 变少了，CPU高速缓存的效率也因此降低。64位JVM上CPU高速缓存效率的降低常常导致64位JVM的性能比32位JVM降低8%-20%。  
+开启-XX:UseCompressedOops,使得64位JVM不但有更大的堆，而且还有32位JVM的性能。有些Java应用在64位HotSpot VM上开启压缩指针后，性能比32位HotSpot更好。压缩指针之所以可以改善性能，是因为它可以将64位指针转换为相对于java堆基地址的32位偏移。   
+如果Java堆超过了32位HotSpot VM的限制，但又不想牺牲性能，可以使用该选项。
+
 ## JVM虚拟机参数
 
 ### 堆大小设置
