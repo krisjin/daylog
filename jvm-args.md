@@ -43,7 +43,7 @@ Java堆的最大尺寸是新生代和老年代的总和，Java堆永远不会超
 ## -Xmn<n>[g|m|k]
 同时设置新生代的初始、最小和最大尺寸，新生代的尺寸设定为这个值。如果期望-XX:NewSize和-XX:MaxNewSize设置成相同的值，这是一个便利的命令行选项。
 
-## -XX:NewRatio=<n> 
+## -XX:NewRatio=< n >
 新生代和老年代的尺寸比，例如n为3，则比率为1:3，即新生代占新生代和老年代总和的1/4。如果java堆扩展或缩减，HotSpot将依据此比率调整新生代和老年代
 
 如果-Xms和-Xmx不同，并且希望新生代和老年代的大小维持特定比率时，这是个便利的命令选项。
@@ -58,9 +58,15 @@ Java堆的最大尺寸是新生代和老年代的总和，Java堆永远不会超
 
 如果-XX:MaxPermSize大于-XX:PermSize，永久代的尺寸会随着应用的需要而扩展和缩减，特别是在需要加载类或存储intern String时。永久代的扩展或缩绒需要FullGC,所以注重延迟或吞吐量的应用程序通常应把-XX:MaxPermSize和-XX:PermSize设置成相同的值。
 
-## -XX:SurvivorRatio=<n>
+## -XX:SurvivorRatio=< n >
+单块Survivor区与Eden区的大小比率，< n >是比率。依据-XX:SurvivorRatio=< n >指定的比率，可以用以下等式计算Survivor区的大小：
 
+		survivor size=-Xmn<n>/(-XX:SurvivorRatio=<n> + 2)
+-Xmn< n >是新生代的尺寸，而-XX:SurvivorRatio=< n >是比率值。等式中的+2是因为有两块Survivor区，指定的比率越大，Survivor区的尺寸越小。
 
+在使用CMS收集器或Throughput收集器，并且自适应尺寸调整关闭（-XX:-UseAdaptiveSizePolicy）时，如果你想显示调整Survivor区从而控制对象的老化，那就应该使用-XX:SurvivorRatio=< n >
+
+在使用Throughput收集器，并且自适应尺寸调整开启时，不要使用-XX:SurvivorRatio=< n >。通过-XX:+UseParallelGC或-XX：+UseParallelOldGC选择的Throughput收集器，默认开启自适应尺寸调整。如果想为Throughput收集器的自适应尺寸调整设定初始Survivor比率，则可使用选项-XX:InitialSurvivorRatio=< n >
 ## JVM虚拟机参数
 
 ### 堆大小设置
