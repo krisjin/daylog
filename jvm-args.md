@@ -48,7 +48,6 @@ Java堆的最大尺寸是新生代和老年代的总和，Java堆永远不会超
 
 如果-Xms和-Xmx不同，并且希望新生代和老年代的大小维持特定比率时，这是个便利的命令选项。
 
-
 ## -XX:PermSize=<n>[g|m|k]
 永久代的初始和最小尺寸。永久代永远不会小于这个值。
 
@@ -57,6 +56,9 @@ Java堆的最大尺寸是新生代和老年代的总和，Java堆永远不会超
 ## -XX:MaxPermSize=<n>[g|m|k]
 永久代的最大尺寸，永久代永远不会超过这个值。
 
+如果-XX:MaxPermSize大于-XX:PermSize，永久代的尺寸会随着应用的需要而扩展和缩减，特别是在需要加载类或存储intern String时。永久代的扩展或缩绒需要FullGC,所以注重延迟或吞吐量的应用程序通常应把-XX:MaxPermSize和-XX:PermSize设置成相同的值。
+
+## -XX:SurvivorRatio=<n>
 
 
 ## JVM虚拟机参数
