@@ -40,8 +40,23 @@ Java堆的最大尺寸是新生代和老年代的总和，Java堆永远不会超
 
 如果-XX:MaxNewSize大于-XX:NewSize,新生代的大小会依据应用的需要而扩展或缩减，新生代的扩展或缩减需要FullGC,所以注重延迟或吞吐量的应用程序通常把-XX:MaxNewSize 和-XX:NewSize设置成相同的值。
 
-## -Xmn<>[g|m|k]
+## -Xmn<n>[g|m|k]
 同时设置新生代的初始、最小和最大尺寸，新生代的尺寸设定为这个值。如果期望-XX:NewSize和-XX:MaxNewSize设置成相同的值，这是一个便利的命令行选项。
+
+## -XX:NewRatio=<n>
+新生代和老年代的尺寸比，例如n为3，则比率为1:3，即新生代占新生代和老年代总和的1/4。如果java堆扩展或缩减，HotSpot将依据此比率调整新生代和老年代
+
+如果-Xms和-Xmx不同，并且希望新生代和老年代的大小维持特定比率时，这是个便利的命令选项。
+
+
+## -XX:PermSize=<n>[g|m|k]
+永久代的初始和最小尺寸。永久代永远不会小于这个值。
+
+如果-XX:PermSize小于-XX:MaxPermSize,永久代的尺寸会随着应用的需要而扩展或缩减，特别是需要加载类或存储intern String的情况。永久代的扩展或缩减需要FullGC,所以注重延迟或吞吐量的应用程序通常应把-XX:PermSize和-XX:MaxPermSize设置成相同的值。
+
+## -XX:MaxPermSize=<n>[g|m|k]
+永久代的最大尺寸，永久代永远不会超过这个值。
+
 
 
 ## JVM虚拟机参数
