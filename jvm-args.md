@@ -7,8 +7,11 @@
 ## -client
 表示HotSpot VM把应用当成客户端类程序来优化。目前来说，该选项使HotSpot VM将运行时环境设置为 client JVM。 该选项应该在应用启动时使用，对这类应用程序而言，**内存占用是最重要的性能标准，远比吞吐量重要**。
 
-## server
+## -server
 表示HotSpot VM把应用程序当成服务器类来优化。该选项使HotSpot VM将运行时环境设置成 server JVM 。该选项适用于高吞吐量比启动时间和内存占用更重要的应用程序。
+
+## -d64
+加载64位的HotSpot VM,而不是默认的32位的HotSpot。64位的HotSpot可以设置更大的堆内存。-Xms和-Xmx小于32G时，该选项要与-XX:+UseComressedOops联合使用。Java6 Update23之后的HotSpot默认开启-XX:UseCompressedOops。
 
 ## JVM虚拟机参数
 
