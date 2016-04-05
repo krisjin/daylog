@@ -151,3 +151,16 @@ ps: 关于Java常见问题的排查方法，重新专门写了一个PPT，涵盖
 3. 应用无响应问题，例如http访问后返回499；
 4. CPU利用率问题，例如us耗尽；
 5. Java进程退出问题。
+6. 
+
+
+
+
+
+
+串行收集器：
+DefNew：是使用-XX:+UseSerialGC（新生代，老年代都使用串行回收收集器）。
+并行收集器：
+ParNew：是使用-XX:+UseParNewGC（新生代使用并行收集器，老年代使用串行回收收集器）或者-XX:+UseConcMarkSweepGC(新生代使用并行收集器，老年代使用CMS)。
+PSYoungGen：是使用-XX:+UseParallelOldGC（新生代，老年代都使用并行回收收集器）或者-XX:+UseParallelGC（新生代使用并行回收收集器，老年代使用串行收集器）
+garbage-first heap：是使用-XX:+UseG1GC（G1收集器）
