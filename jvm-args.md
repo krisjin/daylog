@@ -171,6 +171,8 @@ garbage-first heap：是使用-XX:+UseG1GC（G1收集器）
 
 	java -Xmx3800m -Xms3800m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20 -XX:+UseParallelOldGc
 
--XX:+UseParallelOldGC：配置年老代垃圾收集方式为并行收集 ，年轻代也是
+-XX:+UseParallelOldGC：配置年老代垃圾收集方式为并行收集
+-XX:+UseParallelGC 新生代使用并行回收收集器，可以尽可能的减少gc时间
+	
 	
 
