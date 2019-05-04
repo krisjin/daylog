@@ -164,3 +164,13 @@ DefNew：是使用-XX:+UseSerialGC（新生代，老年代都使用串行回收�
 ParNew：是使用-XX:+UseParNewGC（新生代使用并行收集器，老年代使用串行回收收集器）或者-XX:+UseConcMarkSweepGC(新生代使用并行收集器，老年代使用CMS)。
 PSYoungGen：是使用-XX:+UseParallelOldGC（新生代，老年代都使用并行回收收集器）或者-XX:+UseParallelGC（新生代使用并行回收收集器，老年代使用串行收集器）
 garbage-first heap：是使用-XX:+UseG1GC（G1收集器）
+
+
+
+## 吞吐量调优案例
+
+	java -Xmx3800m -Xms3800m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20 -XX:+UseParallelOldGc
+
+-XX:+UseParallelOldGC：配置年老代垃圾收集方式为并行收集 ，年轻代也是
+	
+
