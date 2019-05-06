@@ -67,6 +67,14 @@ Java堆的最大尺寸是新生代和老年代的总和，Java堆永远不会超
 在使用CMS收集器或Throughput收集器，并且自适应尺寸调整关闭（-XX:-UseAdaptiveSizePolicy）时，如果你想显示调整Survivor区从而控制对象的老化，那就应该使用-XX:SurvivorRatio=< n >
 
 在使用Throughput收集器，并且自适应尺寸调整开启时，不要使用-XX:SurvivorRatio=< n >。通过-XX:+UseParallelGC或-XX：+UseParallelOldGC选择的Throughput收集器，默认开启自适应尺寸调整。如果想为Throughput收集器的自适应尺寸调整设定初始Survivor比率，则可使用选项-XX:InitialSurvivorRatio=< n >
+
+## -XX:+PrintTenuringDistribution
+在日志中输出对象年龄分布
+
+## -XX:+PrintGCApplicationStoppedTime 
+
+在日志中输出程序STW 的暂停时间，输出形式: Total time for which application threads were stopped: 0.0468229 seconds。
+
 ## JVM虚拟机参数
 
 ### 堆大小设置
@@ -107,6 +115,8 @@ Java堆的最大尺寸是新生代和老年代的总和，Java堆永远不会超
 -XX:+PrintGCDetails
 
 -XX:+PrintGCTimeStamps
+
+-XX:+PrintGCCause
 
 -XX:+PrintGCApplicationStoppedTime
 
