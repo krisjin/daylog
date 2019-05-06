@@ -141,6 +141,8 @@ Java在实现RMI Server的时候会通过定时的调System.gc来强制做GC（�
 2. 缺少-XX:+UseCMSInitiatingOccupancyOnly
 由于我们的Java应用的heap基本都是大于4G的，所以都是用的CMS，当时我在写启动参数的时候一直犹豫要不要加上-XX:+UseCMSInitiatingOccupancyOnly这个参数，一犹豫就没加，但事实上后来碰到了不少应用由于JVM自行触发CMS GC的机制导致CMS GC频繁，所以建议用CMS GC的场景下还是加上这个参数更稳妥。
  
+ -XX:+UseCMSInitiatingOccupancyOnly CMS GC条件只根据XX:CMSInitiatingOccupancyFraction
+ 
 3. -XX:MaxDirectMemorySize
 话说在写启动参数的时候我都压根不知道这参数（要知道Java到底有哪些启动参数可用，以及默认值是多少，最靠谱的方法是在启动参数上加-XX:+PrintFlagsFinal或用jinfo -flags [pid]来查看），后来是由于有一次出现了有应用物理内存被耗光，排查的时候才发现是Direct ByteBuffer这块默认的大小是heap size，所以在有些情况下可能会出现Direct ByteBuffer这里占用了大量的空间，但heap这边又还不到触发Full gc/CMS gc的条件，就会有可能导致物理内存被耗光。
 因此对于远程交互比较多的应用，建议还是加上这个参数，合理控制大小，不要让heap size+Direct Memory Size就把物理内存给耗光了。
@@ -185,3 +187,7 @@ garbage-first heap：是使用-XX:+UseG1GC（G1收集器）
 -XX:+UseCMSCompactAtFullCollection：使用并发收集器时，开启对年老代的压缩。  
 -XX:CMSFullGCsBeforeCompaction=0：上面配置开启的情况下，这里设置多少次Full GC后，对年老代进行压缩
 
+
+
+
+	-XX:+UseParallelGC -XX:+UseConcMarkSweepGC -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=3 -Xmx4g -Xms4g -XX:MaxPermSize=256m -Xmn2g -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=80 -XX:ParallelGCThreads=4 -XX:ConcGCThreads=2
