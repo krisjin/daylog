@@ -190,4 +190,4 @@ garbage-first heap：是使用-XX:+UseG1GC（G1收集器）
 
 
 
-	-XX:+UseParallelGC -XX:+UseConcMarkSweepGC -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=3 -Xmx4g -Xms4g -XX:MaxPermSize=256m -Xmn2g -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=80 -XX:ParallelGCThreads=4 -XX:ConcGCThreads=2
+-XX:+UseParallelGC -XX:+UseConcMarkSweepGC -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=3 -Xmx4g -Xms4g -XX:MaxPermSize=256m -Xmn2g -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=80 -XX:ParallelGCThreads=4 -XX:ConcGCThreads=2 -Xloggc:/export/Logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGC 
