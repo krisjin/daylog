@@ -31,3 +31,9 @@ https://github.com/Angel-ML/angel/issues/947
     =====================
     因为这个框架没人回复，因此，作为热心用户，就互通有无了
     希望发扬共享精神，coding share
+    
+    
+    
+    ---
+    
+    https://github.com/Angel-ML/angel/issues/7
