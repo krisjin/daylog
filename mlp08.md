@@ -1,17 +1,6 @@
 ### 机器学习平台实现MLOps的设计思路
 
 
-在前面的文章中介绍了机器学习平台的设计思路，
-
-
-#### 
-
-MLOps (a compound of “machine learning” and “operations”) is a practice for collaboration and communication between data scientists and operations professionals to help **manage production ML (or deep learning) lifecycle**.[1] Similar to the DevOps or DataOps approaches, MLOps looks to increase automation and improve the quality of production ML while also focusing on business and regulatory requirements. While MLOps also started as a set of best practices, it is slowly evolving into an independent approach to ML lifecycle management. MLOps applies to the entire lifecycle - from integrating with **model generation** (software development lifecycle, continuous integration/continuous delivery), orchestration, and deployment, to health, **diagnostics**, **governance**, and business metrics. According to Gartner, MLOps is a subset of ModelOps. **MLOps is focused on the operationalization of ML models**, while ModelOps covers the **operationalization of all types of AI models**
-
-
-
-
-
 
 
 在前面的文章中介绍了机器学习平台相关内容，本文主要介绍MLOps，因为在我们不断的去深入理解机器学习平台过程中，也是逐渐向MLOps逼近的。在机器学习工程化的过程中也是逐步演进的。为什么要做这件事，前文介绍了很多了。
@@ -20,12 +9,9 @@ MLOps (a compound of “machine learning” and “operations”) is a practice 
 
 **MLOps是什么**
 
-
-
 MLOps(a compound of “machine learning” and “operations”) is a practice for collaboration and communication between data scientists and operations professionals to help **manage production ML (or deep learning) lifecycle**.[1] Similar to the DevOps or DataOps approaches, MLOps looks to increase automation and improve the quality of production ML while also focusing on business and regulatory requirements. While MLOps also started as a set of best practices, it is slowly evolving into an independent approach to ML lifecycle management. MLOps applies to the entire lifecycle - from integrating with **model generation** (software development lifecycle, continuous integration/continuous delivery), orchestration, and deployment, to health, **diagnostics**, **governance**, and business metrics. According to Gartner, MLOps is a subset of ModelOps. **MLOps is focused on the operationalization of ML models**, while ModelOps covers the **operationalization of all types of AI models。**
 
-**
-**
+
 
 上面是维基百科中对MLOps的定义，通过了解总结下MLOps的实现目标
 
@@ -53,7 +39,7 @@ MLOps技术架构
 
 
 
-![](./img/mlops1.png)
+![](img/mlops1.png)
 
 
 
