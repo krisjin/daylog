@@ -7,4 +7,7 @@
 - https://twimlai.com/blog/
 - https://algorithmia.com/
 - https://www.coursera.org/lecture/mlops-fundamentals/concept-overview-Q4H0z
+- https://docs.azure.cn/zh-cn/machine-learning/concept-designer
+- https://ml-ops.org/
+- https://github.com/microsoft/MLOps/tree/master/model-training
 
