@@ -48,6 +48,20 @@ Machine learning has taken over pretty much every industry, owing to the automat
 
 虽然MLflow是一个强大的工具，用于对日志记录的模型进行排序，但它几乎不能回答应该生成什么模型的问题。这是一个有点困难的问题，因为根据您的模型，培训可能需要大量的资源，超参数可能是不直观的，或者两者兼而有之。即使是这些问题，在一定程度上也可以自动解决。
 
+
+
+
+
+[MLflow](https://www.mlflow.org/) 是用于管理端到端机器学习生命周期的开源平台。 它具有以下主要组件：
+
+- 跟踪：用于跟踪试验，以记录和比较参数与结果。
+- 模型：用于通过各种 ML 库管理模型，并将其部署到各种模型服务和推理平台。
+- 项目：用于将 ML 代码打包成可重用、可再现的格式，以便与其他数据科学家共享或转移到生产环境。
+- 模型注册表：使你可以将模型存储集中化，以便使用版本控制和批注的功能来管理模型的完整生命周期阶段转换：从过渡到生产。
+- 模型服务：可用于将 MLflow 模型以 REST 终结点的形式托管。
+
+MLflow 支持 [Java](https://www.mlflow.org/docs/latest/java_api/index.html)、[Python](https://www.mlflow.org/docs/latest/python_api/index.html)、[R](https://www.mlflow.org/docs/latest/R-api.html) 和 [REST](https://docs.azure.cn/zh-cn/databricks/dev-tools/api/latest/mlflow) API。
+
 https://github.com/mlflow/mlflow
 
 
